@@ -259,11 +259,11 @@ open class ItemBaseController<T: UIView>: UIViewController, ItemController, UIGe
     func scrollViewDidDoubleTap(_ recognizer: UITapGestureRecognizer) {
 
         let touchPoint = recognizer.location(ofTouch: 0, in: itemView)
-        let aspectFillScale = aspectFillZoomScale(forBoundingSize: scrollView.bounds.size, contentSize: itemView.bounds.size)
+        let scale:CGFloat = 2.0
 
-        if (scrollView.zoomScale == 1.0 || scrollView.zoomScale > aspectFillScale) {
+        if (scrollView.zoomScale == 1.0) {
 
-            let zoomRectangle = zoomRect(ForScrollView: scrollView, scale: aspectFillScale, center: touchPoint)
+            let zoomRectangle = zoomRect(ForScrollView: scrollView, scale: scale, center: touchPoint)
 
             UIView.animate(withDuration: doubleTapToZoomDuration, animations: { [weak self] in
 
