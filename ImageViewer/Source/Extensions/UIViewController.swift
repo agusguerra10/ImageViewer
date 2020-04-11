@@ -10,8 +10,7 @@ import UIKit
 
 public extension UIViewController {
 
-    public func presentImageGallery(_ gallery: GalleryViewController, completion: ((Void) -> Void)? = {}) {
-
+    func presentImageGallery(_ gallery: GalleryViewController, completion: (() -> Void)? = {}) {
         present(gallery, animated: false, completion: completion)
     }
 }
